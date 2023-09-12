@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose and Delete</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton" onclick="showMessage()" onmouseover="showMouseOverMessage()" onmouseout="showMouseOutMessage()">Натисни мене</button>
+
+    <script>
+        function showMessage() {
+            alert("I was pressed!");
+        }
+
+        function showMouseOverMessage() {
+            alert("Mouse on me!");
+        }
+
+        function showMouseOutMessage() {
+            alert("Mouse is not on me!");
+        }
+    </script>
+</body>
+</html>

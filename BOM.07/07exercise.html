@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coohe country and city</title>
+</head>
+<body>
+    <select name="country" id="country">
+        <option value="ger">Germany</option>
+        <option value="usa">USA</option>
+        <option value="ukr">Ukraine</option>
+    </select>
+
+    <select name="cities" id="cities"></select>
+
+    <p id="result"></p>
+
+    <script>
+        var citiesData = {
+            ger: ['Berlin', 'Munich', 'Hamburg'],
+            usa: ['New York', 'Los Angeles', 'Chicago'],
+            ukr: ['Kyiv', 'Lviv', 'Odessa']
+        };
+
+        var countrySelect = document.getElementById('country');
+        var citiesSelect = document.getElementById('cities');
+        var resultElement = document.getElementById('result');
+
+        function updateCities() {
+            var selectedCountry = countrySelect.value;
+            citiesSelect.innerHTML = '';
+
+            if (citiesData[selectedCountry]) {
+                citiesData[selectedCountry].forEach(function(city) {
+                    var option = document.createElement('option');
+                    option.text = city;
+                    option.value = city.toLowerCase();
+                    citiesSelect.add(option);
+                });
+            }
+        }
+
+        function showResult() {
+            var selectedCountry = countrySelect.options[countrySelect.selectedIndex].text;
+            var selectedCity = citiesSelect.options[citiesSelect.selectedIndex].text;
+            resultElement.textContent = 'Ви обрали ' + selectedCity + ' в ' + selectedCountry;
+        }
+
+        countrySelect.addEventListener('change', updateCities);
+        citiesSelect.addEventListener('change', showResult);
+    </script>
+</body>
+</html>
