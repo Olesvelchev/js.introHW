@@ -9,22 +9,30 @@
             padding: 10px 20px;
             font-size: 16px;
         }
+
+        #messageContainer {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <button id="myButton" onclick="showMessage()" onmouseover="showMouseOverMessage()" onmouseout="showMouseOutMessage()">Натисни мене</button>
+    <div id="messageContainer"></div>
 
     <script>
         function showMessage() {
-            alert("I was pressed!");
+            let messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = "Кнопка натиснута!";
         }
 
         function showMouseOverMessage() {
-            alert("Mouse on me!");
+            let messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = "Мишка над кнопкою!";
         }
 
         function showMouseOutMessage() {
-            alert("Mouse is not on me!");
+            let messageContainer = document.getElementById('messageContainer');
+            messageContainer.innerHTML = "Мишка не над кнопкою!";
         }
     </script>
 </body>
