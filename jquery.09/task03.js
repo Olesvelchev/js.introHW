@@ -1,10 +1,5 @@
-const h3Elements = document.querySelectorAll('h3');
-
-h3Elements.forEach(h3Element => {
-    const divElement = h3Element.nextElementSibling;
-
-    if (divElement && divElement.tagName === 'DIV') {
-        
-        h3Element.parentNode.insertBefore(divElement, h3Element);
-    }
+$(document).ready(function() {
+    $('h3 + div').each(function() {
+        $(this).insertBefore($(this).prev('h3'));
+    });
 });

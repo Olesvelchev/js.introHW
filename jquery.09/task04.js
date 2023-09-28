@@ -1,13 +1,9 @@
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+$(document).ready(function() {
+    $('input[type="checkbox"]').change(function() {
+        var checkedCount = $('input[type="checkbox"]:checked').length;
 
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-        const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-        
-        if (checkedCheckboxes.length >= 3) {
-            checkboxes.forEach(cb => {
-                cb.disabled = true;
-            });
+        if (checkedCount >= 3) {
+            $('input[type="checkbox"]').prop('disabled', true);
         }
     });
 });

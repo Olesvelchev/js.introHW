@@ -1,9 +1,6 @@
-'const h2Elements = document.querySelectorAll('h2.head');
-h2Elements.forEach(element => {
-    element.style.backgroundColor = 'green';
-    const innerElements = element.querySelectorAll('.inner');
+$(document).ready(function() {
+    $('h2.head').css('background-color', 'green');
 
-    innerElements.forEach(innerElement => {
-        innerElement.style.fontSize = '35px';
-    });
+    $('h2.head .inner').css('font-size', '35px');
 });
+
